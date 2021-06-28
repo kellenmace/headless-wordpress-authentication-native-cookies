@@ -41,7 +41,7 @@ export const GET_USER = gql`
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const { data, loading, error } = useQuery(GET_USER);
-  const user = data?.viewer || undefined;
+  const user = data?.viewer;
   const loggedIn = Boolean(user);
 
   const value = {

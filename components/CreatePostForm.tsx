@@ -16,7 +16,7 @@ const CREATE_POST = gql`
 
 export default function CreatePostForm() {
   const [createPost, { data, loading, error }] = useMutation(CREATE_POST);
-  const wasPostCreated = Boolean(data?.createPost?.post);
+  const wasPostCreated = Boolean(data?.createPost?.post?.databaseId);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

@@ -16,7 +16,7 @@ export default function SendPasswordResetEmailForm() {
   const [sendPasswordResetEmail, { loading, error, data }] = useMutation(
     SEND_PASSWORD_RESET_EMAIL
   );
-  const wasEmailSent = Boolean(data?.sendPasswordResetEmail);
+  const wasEmailSent = Boolean(data?.sendPasswordResetEmail?.user?.databaseId);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

@@ -26,7 +26,7 @@ export default function ProfileForm() {
   const { user } = useAuth();
   const { id, firstName, lastName, email } = user as User;
   const [updateProfile, { data, loading, error }] = useMutation(UPDATE_PROFILE);
-  const wasProfileUpdated = Boolean(data?.updateUser?.user);
+  const wasProfileUpdated = Boolean(data?.updateUser?.user?.databaseId);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

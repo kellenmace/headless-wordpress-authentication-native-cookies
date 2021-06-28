@@ -24,7 +24,7 @@ const REGISTER_USER = gql`
 
 export default function SignUpForm() {
   const [register, { data, loading, error }] = useMutation(REGISTER_USER);
-  const wasSignUpSuccessful = Boolean(data?.registerUser?.user);
+  const wasSignUpSuccessful = Boolean(data?.registerUser?.user?.databaseId);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

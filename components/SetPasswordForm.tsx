@@ -32,7 +32,7 @@ export default function SetPasswordForm({ resetKey: key, login }: Props) {
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [clientErrorMessage, setClientErrorMessage] = useState('');
   const [resetPassword, { data, loading, error }] = useMutation(RESET_PASSWORD);
-  const wasPasswordReset = Boolean(data?.resetUserPassword?.user);
+  const wasPasswordReset = Boolean(data?.resetUserPassword?.user?.databaseId);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
