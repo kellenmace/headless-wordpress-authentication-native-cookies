@@ -9,9 +9,12 @@ This is a Next.js application that shows how to authenticate users using WordPre
 
 Apple doesn't allow cross-site cookies, making the login impossible if you are hosting the app & WordPress on **separate domains**.
 
-The **short-term** solution is to disable it from: 
+The **short-term** solution is to disable this option from Safari settings:
 
 `Safari > Settings > Site tracking > Prevent Cross-Site Tracking`.
+
+It will allow you to use the app, but it won't fix the issue for all other Safari / iOS users...
+
 
 The **long-term** solution is to host both the WordPress (back-end) & the webapp (front-end) on the **same domain** (e.g. each one on a different sub-domain).
 
